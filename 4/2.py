@@ -1,6 +1,5 @@
 f = open("input.txt", 'r')
 lines = [list(line.strip()) for line in f]
-targetString = 'XMAS'
 result = 0
 
 def isX(lines, r, c):
