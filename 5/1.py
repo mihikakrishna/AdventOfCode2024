@@ -10,14 +10,11 @@ def findPageSum():
     for update in updates:
         update = [int(u) for u in update]
         isCorrect = True
-        for i in range(len(update)):
-            for j in range(i+1, len(update)):
-                if update[j] in prereqs[update[i]]:
-                    continue
-                isCorrect = False
-                break
-            if not isCorrect:
-                break
+        for i in range(len(update)-1, 0, -1):
+            if update[i] in prereqs[update[i-1]]:
+                continue
+            isCorrect = False
+            break
         pageSum += update[len(update)//2] if isCorrect else 0
     return pageSum
 
